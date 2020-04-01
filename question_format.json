@@ -1,0 +1,40 @@
+[
+    {
+        "type": "mc",
+        "body": {
+            "q": "What is 5 + 5?",
+            "choices": [
+                {
+                    "A": "3"
+                },
+                {
+                    "B": "6"
+                },
+                {
+                    "C": "10"
+                }
+            ],
+            "ans": "A"
+        }
+    },
+    {
+        "type": "mc-poll",
+        "body": {
+            "q": "What is you favourite color?",
+            "choices": [
+                {
+                    "A": "Red"
+                },
+                {
+                    "B": "Green"
+                },
+                {
+                    "C": "Blue"
+                }
+            ]
+        }
+    },
+    {
+        "type": "range"
+    }
+]

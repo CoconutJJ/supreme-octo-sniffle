@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const config = {
   entry: './src/index.tsx',
   mode: 'development',
@@ -31,7 +31,7 @@ const config = {
         exclude: /node_modules/
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         use: [
           'style-loader',
           'css-loader',
@@ -50,9 +50,16 @@ const config = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(
+      {
+        root: path.join(__dirname, 'dist'),
+        cleanStaleWebpackAssets: true
+      }
+    ),
     new HtmlWebpackPlugin({
-        template: require('html-webpack-template'),
-        inject: false,
+        template: './views/index.html',
+        inject: 'body',
+        title: "Supreme Octo Sniffle",
         appMountId: 'app',
       })
   ],
